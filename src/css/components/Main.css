@@ -1,0 +1,7 @@
+.container__main {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+        padding: 64px 32px 32px 42px;
+    border: 1px solid black;
+}

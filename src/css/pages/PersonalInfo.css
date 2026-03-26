@@ -1,0 +1,72 @@
+.container__personal__info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title__form {
+    width: 100%;
+    height: auto;
+    margin: 0px 0px 40px;
+}
+
+.title__form h2 {
+    color: hsl(213, 96%, 18%);
+    font-size: 32px;
+    font-weight: 700;
+    text-align: start;
+    margin: 0px 0px 8px;
+}
+
+.title__form p {
+    color: hsl(231, 11%, 63%);
+    font-size: 16px;
+    font-weight: 400;
+    text-align: start;
+}
+
+.container__form {
+    gap: 35px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs label {
+    color: hsl(213, 96%, 18%);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: start;
+    margin: 0px 0px 5px;
+    text-transform: capitalize;
+}
+
+.inputs input {
+    color: hsl(213, 96%, 18%);
+    font-size: 16px;
+    font-weight: 400;
+    text-align: start;
+    padding: 12px;
+    outline: none;
+    transition: .3s ease-in-out;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 7px;
+}
+
+.inputs input:focus {
+    border: 1px solid hsl(243, 100%, 62%);
+}
+
+::placeholder {
+    color: hsl(231, 11%, 63%);
+    font-weight: 600;
+}
