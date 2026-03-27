@@ -9,8 +9,8 @@ const Main = () => {
         <main className="container__main">
           <Routes>
             <Route path="/" element={<PersonalInfo />} />
-            <Route path="/step2" element={<SeleccionarComplemento />} />
-            <Route path="/step3" element={<SeleccionarPlan />} />
+            <Route path="/step2" element={<SeleccionarPlan />} />
+            <Route path="/step3" element={<SeleccionarComplemento />} />
             <Route path="/step4" element={<Sumatoria />} />
           </Routes>
         </main>
