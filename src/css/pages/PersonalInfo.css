@@ -34,11 +34,20 @@
     flex-direction: column;
 }
 
-.inputs{
+.inputs {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
+}
+
+.label__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 0px 0px 5px;
 }
 
 .inputs label {
@@ -46,8 +55,14 @@
     font-size: 16px;
     font-weight: 600;
     text-align: start;
-    margin: 0px 0px 5px;
     text-transform: capitalize;
+}
+
+.error__text {
+    color: hsl(354, 84%, 57%);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: end;
 }
 
 .inputs input {
@@ -64,6 +79,14 @@
 
 .inputs input:focus {
     border: 1px solid hsl(243, 100%, 62%);
+}
+
+.inputs input.input__error {
+    border: 1px solid hsl(354, 84%, 57%);
+}
+
+.inputs input.input__error:focus {
+    border: 1px solid hsl(354, 84%, 57%);
 }
 
 ::placeholder {
