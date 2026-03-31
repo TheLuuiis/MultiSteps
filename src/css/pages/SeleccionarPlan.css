@@ -1,6 +1,6 @@
 .container__select__plan {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -27,17 +27,15 @@
 }
 
 .container__plans {
-    gap: 30px;
+    gap: 20px;
     width: 100%;
-    height: 182.98px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin: 0px 0px 40px;
 }
 
 .plan {
-    flex: 1;
-    height: 100%;
+    min-height: 183px;
     padding: 16px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -100,6 +98,9 @@
     height: auto;
     display: flex;
     justify-content: center;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: hsl(217, 100%, 97%);
 }
 
 .duration {
@@ -152,4 +153,96 @@
 
 .switch input:checked + .slider::before {
     transform: translateX(24px);
+}
+
+@media (max-width: 900px) {
+    .container__plans {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 700px) {
+    .title__plan {
+        margin-bottom: 28px;
+    }
+
+    .title__plan h2 {
+        font-size: 28px;
+    }
+
+    .title__plan p {
+        font-size: 15px;
+    }
+
+    .container__plans {
+        grid-template-columns: 1fr;
+        margin-bottom: 28px;
+    }
+
+    .plan {
+        min-height: auto;
+    }
+
+    .plan label {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .details {
+        flex: 1;
+    }
+}
+
+@media (max-width: 420px) {
+    .container__duration {
+        padding: 14px 10px;
+    }
+
+    .duration {
+        gap: 10px;
+    }
+
+    .duration__label,
+    .details p {
+        font-size: 14px;
+    }
+
+    .details h4 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .title__plan h2 {
+        font-size: 24px;
+    }
+
+    .title__plan p,
+    .details p,
+    .duration__label {
+        font-size: 14px;
+    }
+
+    .plan {
+        padding: 14px;
+    }
+
+    .plan label {
+        gap: 12px;
+    }
+
+    .switch {
+        width: 46px;
+        height: 24px;
+    }
+
+    .slider::before {
+        width: 16px;
+        height: 16px;
+    }
+
+    .switch input:checked + .slider::before {
+        transform: translateX(22px);
+    }
 }

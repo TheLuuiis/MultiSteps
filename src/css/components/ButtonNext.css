@@ -4,7 +4,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
     margin-top: auto;
+    padding-top: 32px;
+}
+
+.container__button > span {
+    display: block;
+    width: 1px;
+    height: 1px;
 }
 
 .button__next {
@@ -25,4 +33,27 @@
     color: hsl(213, 96%, 18%);
     border: 1px solid hsl(213, 96%, 18%);
     background-color: transparent;
+}
+
+@media (max-width: 640px) {
+    .container__button {
+        padding-top: 24px;
+    }
+
+    .button__next {
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container__button {
+        gap: 10px;
+        padding-top: 20px;
+    }
+
+    .button__next {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
 }

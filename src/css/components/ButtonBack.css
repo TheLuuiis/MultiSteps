@@ -12,3 +12,17 @@
 .button__back:hover {
 	color: hsl(213, 96%, 18%);
 }
+
+@media (max-width: 640px) {
+	.button__back {
+		font-size: 15px;
+		padding: 14px 0;
+	}
+}
+
+@media (max-width: 360px) {
+	.button__back {
+		font-size: 14px;
+		padding: 12px 0;
+	}
+}

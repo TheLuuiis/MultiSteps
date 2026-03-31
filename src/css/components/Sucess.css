@@ -1,6 +1,8 @@
 .container__succes {
     width: 100%;
     height: 100%;
+    max-width: 540px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,5 +27,37 @@
     color: hsl(231, 11%, 63%);
     font-size: 16px;
     font-weight: 500;
+    line-height: 1.6;
     text-align: center;
+}
+
+@media (max-width: 640px) {
+    .container__succes img {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 24px;
+    }
+
+    .container__succes h2 {
+        font-size: 28px;
+    }
+
+    .container__succes p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container__succes img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .container__succes h2 {
+        font-size: 24px;
+    }
+
+    .container__succes p {
+        font-size: 14px;
+    }
 }
