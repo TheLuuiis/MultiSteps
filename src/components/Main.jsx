@@ -4,6 +4,8 @@ import SeleccionarPlan from '../pages/SeleccionarPlan';
 import Sumatoria from '../pages/Sumatoria';
 import { Routes, Route } from "react-router-dom";
 import '../css/components/Main.css';
+import Sucess from "./Sucess";
+
 const Main = () => {
     return (  
         <main className="container__main">
