@@ -1,0 +1,14 @@
+.button__back {
+	color: hsl(231, 11%, 63%);
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	padding: 16px 0;
+	border: none;
+	background-color: transparent;
+	transition: color .3s ease-in-out;
+}
+
+.button__back:hover {
+	color: hsl(213, 96%, 18%);
+}

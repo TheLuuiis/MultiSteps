@@ -1,12 +1,32 @@
 import '../css/pages/SeleccionarComplemento.css';
+import { useNavigate } from 'react-router-dom';
+import ButtonNext from '../components/ButtonNext';
+import {
+    ADD_ON_OPTIONS,
+    formatPrice,
+} from '../data/subscriptionOptions';
 
-    const adds = [
-        {id: 1,name: 'Online service', description: 'Access to multiplayer games', price: '+$1/mo'},
-        {id: 2,name: 'Larger storage', description: 'Extra 1TB cloud save', price: '+$2/mo'},
-        {id: 3,name: 'Customizable profile', description: 'Custom theme on your profile', price: '+$2/mo'}
-    ];
+const SeleccionarComplemento = ({ subscription, setSubscription }) => {
+    const navigate = useNavigate();
+    const { selectedAddOnIds, isYearly } = subscription;
 
-const SeleccionarComplemento = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        navigate('/step4');
+    };
+
+    const handleAddOnChange = (addOnId) => {
+        setSubscription((previousSubscription) => {
+            const alreadySelected = previousSubscription.selectedAddOnIds.includes(addOnId);
+
+            return {
+                ...previousSubscription,
+                selectedAddOnIds: alreadySelected
+                    ? previousSubscription.selectedAddOnIds.filter((selectedId) => selectedId !== addOnId)
+                    : [...previousSubscription.selectedAddOnIds, addOnId],
+            };
+        });
+    };
 
     return (  
         <div className="container__select__complement">
@@ -16,22 +36,30 @@ const SeleccionarComplemento = () => {
                     Add-ons help to enhance your gaming experience.
                 </p>
             </div>
-            <div className="container__complement">
-                {adds.map(({id, name, description, price}) => (
-                    <div className="add" key={id}>
-                        <div className="info__add">
-                            <input type="checkbox" />
-                            <div className="description__add">
-                                <h4>{name}</h4>
-                                <p>
-                                    {description}
-                                </p>
+            <form id="add-ons-form" onSubmit={handleSubmit}>
+                <div className="container__complement">
+                    {ADD_ON_OPTIONS.map(({ id, name, description, prices }) => (
+                        <label className="add" key={id} htmlFor={id}>
+                            <div className="info__add">
+                                <input
+                                    id={id}
+                                    type="checkbox"
+                                    checked={selectedAddOnIds.includes(id)}
+                                    onChange={() => handleAddOnChange(id)}
+                                />
+                                <div className="description__add">
+                                    <h4>{name}</h4>
+                                    <p>
+                                        {description}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <span>{price}</span>
-                    </div>
-                ))}
-            </div>
+                            <span>+{formatPrice(prices[isYearly ? 'yearly' : 'monthly'], isYearly)}</span>
+                        </label>
+                    ))}
+                </div>
+            </form>
+            <ButtonNext type="submit" form="add-ons-form" backTo="/step2" showBack />
         </div>
     );
 }

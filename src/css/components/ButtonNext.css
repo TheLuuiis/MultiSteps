@@ -2,11 +2,12 @@
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: end;
+    align-items: center;
+    justify-content: space-between;
     margin-top: auto;
 }
 
-.container__button button {
+.button__next {
     color: hsl(0, 100%, 100%);
     font-size: 16px;
     font-weight: 500;
@@ -20,7 +21,7 @@
     background-color: hsl(213, 96%, 18%);
 }
 
-.container__button button:hover {
+.button__next:hover {
     color: hsl(213, 96%, 18%);
     border: 1px solid hsl(213, 96%, 18%);
     background-color: transparent;

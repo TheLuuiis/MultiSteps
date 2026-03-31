@@ -15,7 +15,7 @@ const Steps = () => {
         <NavLink
           key={number}
           to={path}
-          className='step'
+          className={({ isActive }) => (isActive ? 'step active' : 'step')}
         >
           <div className="number">{number}</div>
           <div className="description__step">

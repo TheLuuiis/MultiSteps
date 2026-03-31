@@ -108,6 +108,15 @@
     gap: 15px;
 }
 
+.duration__label {
+    color: hsl(231, 11%, 63%);
+    transition: color 0.3s ease-in-out;
+}
+
+.duration__label.active {
+    color: hsl(213, 96%, 18%);
+}
+
 .switch {
     position: relative;
     width: 50px;
